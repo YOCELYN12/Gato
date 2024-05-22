@@ -9,13 +9,18 @@
 </head>
 
 <body>
-    <h1>Tic Tac Toe</h1>
-    <div id="contenedor" class="container">
+
+    <h1 class="tex">Tic Tac Toe</h1>
+
+    <div class="container">
+
+        <div class="con1"></div>
+        <div class="con2"></div>
 
         <div class="gato1">
-            <div class="gato"  id="cas_0"></div>
-            <div class="gato"  id="cas_1"></div>
-            <div class="gato"  id="cas_2"></div>
+            <div class="gato" id="cas_0"></div>
+            <div class="gato" id="cas_1"></div>
+            <div class="gato" id="cas_2"></div>
         </div>
 
         <div class="gato2">
@@ -25,11 +30,33 @@
         </div>
 
         <div class="gato3">
-            <div class="gato" id="cas_6" ></div>
-            <div class="gato" id="cas_7" ></div>
-            <div class="gato" id="cas_8" ></div>
+            <div class="gato" id="cas_6"></div>
+            <div class="gato" id="cas_7"></div>
+            <div class="gato" id="cas_8"></div>
         </div>
+
+
+        <p class="turno" id="turnoJugador"></p>
+        <p class="turn">Turno</p>
+
+        <button class="btn" id="reglas">  <img  class="icon" src="/img/instrucciones.png" alt="">Reglas</button>
+
+        <p id="p" class="hidden">El juego el gato, busca completar <br>
+            una línea (diagonal, horizontal o <br>
+            vertical). Esta línea se debe <br>
+            completar sobre el piso o <br>
+            en una pared; estas líneas <br>
+            se deben armar sobre <br>
+            9 cuadros.El grado de dificultad <br>
+            depende de la distancia hacia <br>
+            donde se desplazan, como se <br>
+            desplazan y el tipo de <br>
+            material para hacer las líneas.
+        </p>
+        <button class="btnRestaurar" id="boton">Una mas</button>
+
     </div>
+
 
 </body>
 <script src="toe.js"></script>

@@ -1,24 +1,141 @@
-.container{
-    position: relative;
-    top: 20px;
+
+body{
+    background: url(/img/fondos.jpg) no-repeat;
+    background-size: cover;
+    font-size: 80px;
 }
 
-.gato{
-    height:80px;
-    width: 80px;
-    border: 3px solid rgb(12, 12, 146)
+
+
+.container{
+    position: absolute;
+    top: 190px;
+    left: 38%;
+    background-color: rgba(33, 22, 160, 0.148);
 }
+
+
+
+.hidden{
+    display: none;
+    position: absolute;
+    left: -450px;
+    top: 70px;
+}
+
+.btn{
+    position: absolute;
+    top: 60px;
+    left: -390px;
+    width: 100px;
+    height: 30px;
+    border: 5% solid rgba(3, 3, 92, 0.881);
+    border-radius: 15%;
+    background:rgba(3, 3, 33, 0.955);
+    color: aliceblue;
+} 
+
+.turn{
+    position: absolute;
+    top: 20px;
+    left: 660px;
+    font-size: 40px;
+}
+
+.turno{
+    position: absolute;
+    top: 40px;
+    left: 660px;
+}
+
+.icon{
+    width:20px ;
+}
+.texto{
+    display: flex;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: aliceblue;
+    font-size: 20px;
+}
+
+
+
+.tex{
+    font-family: 'Times New Roman', Times, serif;
+    color: aliceblue;
+    font-size: 70px; 
+    position: absolute;
+    left:580px;
+    top: -8%;
+}
+
+
+
+.con1{
+    background-color: rgba(0, 0, 255, 0.149) ;
+    position: absolute;
+    top: 10%;
+    left: -120%;
+    height:300px;
+    width: 300px;
+    box-shadow: 0 0 20px rgb(18, 13, 95);
+    border: 2px solid rgb(10, 10, 70);
+    font-size: 40%;
+}
+
+
+
+.con2{
+    background-color: rgba(0, 0, 255, 0.149) ;
+    position: absolute;
+    top: 10%;
+    left: 140%;
+    height:300px;
+    width: 300px;
+    box-shadow: 0 0 20px rgb(18, 13, 95);
+    border: 2px solid rgb(10, 10, 70);
+    font-size: 40%;
+}
+
+
+
+.gato{
+    height:130px;
+    width: 130px;
+    box-shadow: 0 0 20px rgb(18, 13, 95);
+    border: 2px solid rgb(10, 10, 70)
+} 
+
+
 
 .gato1{
     display: flex;
     justify-content: center;
 }
 
+
+
 .gato2{
     display: flex;
     justify-content: center;
 }
+
+
+
 .gato3{
     display: flex;
     justify-content: center;
 }
+
+
+.btnRestaurar{
+    position: absolute;
+    top: 70%;
+    left: 165%;
+    width: 30%;
+    border-radius: 20px;
+    background:rgba(3, 3, 33, 0.955);
+    color: aliceblue;
+}
+
