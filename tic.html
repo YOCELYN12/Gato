@@ -11,36 +11,44 @@
 <body>
 
     <h1 class="tex">Tic Tac Toe</h1>
-
+    <!--Contenedor que tiene cada uno de los cuadros para el juego-->
     <div class="container">
-
+        
+        <!--Contenedor 1 para el alert de las reglas-->
         <div class="con1"></div>
-        <div class="con2"></div>
 
+        <!--Contenedor 2 para mostrar el turno del juego-->
+        <div class="con2"></div>
+        
+        <!--Contenedor de la 1° fila de cuadros-->
         <div class="gato1">
             <div class="gato" id="cas_0"></div>
             <div class="gato" id="cas_1"></div>
             <div class="gato" id="cas_2"></div>
         </div>
 
+        <!--Contenedor de la 2° fila de cuadros-->
         <div class="gato2">
             <div class="gato" id="cas_3"></div>
             <div class="gato" id="cas_4"></div>
             <div class="gato" id="cas_5"></div>
         </div>
 
+        <!--Contenedor de la 3° fila de cuadros-->
         <div class="gato3">
             <div class="gato" id="cas_6"></div>
             <div class="gato" id="cas_7"></div>
             <div class="gato" id="cas_8"></div>
         </div>
 
-
+        <!--Determina el turno del jugador-->
         <p class="turno" id="turnoJugador"></p>
         <p class="turn">Turno</p>
 
+         <!--Boton que tiene las reglas del juego-->
         <button class="btn" id="reglas">  <img  class="icon" src="/img/instrucciones.png" alt="">Reglas</button>
 
+        <!--Reglas del juego-->
         <p id="p" class="hidden">El juego el gato, busca completar <br>
             una línea (diagonal, horizontal o <br>
             vertical). Esta línea se debe <br>
@@ -53,7 +61,8 @@
             desplazan y el tipo de <br>
             material para hacer las líneas.
         </p>
-        <button class="btnRestaurar" id="boton">Una mas</button>
+        <!--Boton para reiniciar la partida -->
+        <button class="btnRestaurar" id="boton">¿Una mas?</button>
 
     </div>
 
