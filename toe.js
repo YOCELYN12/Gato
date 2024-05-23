@@ -1,45 +1,61 @@
 //Variables que contienen cada uno de los cuadros
-let cas_0 = document.getElementById("cas_0")
-let cas_1 = document.getElementById("cas_1")
-let cas_2 = document.getElementById("cas_2")
-let cas_3 = document.getElementById("cas_3")
-let cas_4 = document.getElementById("cas_4")
-let cas_5 = document.getElementById("cas_5")
-let cas_6 = document.getElementById("cas_6")
-let cas_7 = document.getElementById("cas_7")
-let cas_8 = document.getElementById("cas_8")
+let cell = document.querySelector(".gato")
 
 //Array de todos los cuadros
 let arregloCeldas = [cas_0, cas_1, cas_2, cas_3, cas_4, cas_5, cas_6, cas_7, cas_8]
 
+let jugadorActual = "✖️"
+
 //Variable para terminar el turno del jugador
-let juga=document.getElementById("turnoJugador")
+let juga = document.getElementById("turnoJugador")
 
 //Funcion para que el jugador(humano), pueda jugar
 function jugador1() {
-
-    arregloCeldas.forEach(casilla => casilla.addEventListener("click", function () { 
+    arregloCeldas.forEach(casilla => casilla.addEventListener("click", function () {
         casilla.innerHTML = "✖️", "⭕"
-        juga.innerHTML="✖️"
-        maquina()
+        juga.innerHTML = "✖️"
+        if (!ganador() && !empate()) {
+            maquina()
+        }
+        if (variable) {
+            jugadorActual = jugadorActual === "✖️" ? "⭕" : "✖️"
+            casilla.innerHTML = jugadorActual
+        }
+
         if (ganador()) {
             alert("El ganador es: " + ganadorF);
-        }
-        
+        }else if (empate()) {}
+
+
     }))
 }
 jugador1()
 
+function mensaje() {
+    document.getElementById("mensaje1").innerHTML = "empate"
+}
+
+function empate() {
+    let empateVacios = arregloCeldas.filter(vacias=>vacias.innerHTML=="")
+    if(empateVacios.length==0){
+        alert("Empate")
+        return true
+    }
+    return false
+}
+
 //Funcion para que la maquina genere una accion aleatoria dentro de los cuadros vacios 
 function maquina() {
     setTimeout(() => {
-        juga.innerHTML="⭕"
+        juga.innerHTML = "⭕"
         let espaciosVacios = arregloCeldas.filter(celda => celda.innerHTML == "")
         let numeroAleaotorio = Math.floor(Math.random() * espaciosVacios.length)
         if (espaciosVacios.length > 0) {
             espaciosVacios[numeroAleaotorio].innerHTML = "⭕", "✖️"
         }
+
     }, 1000);
+
 }
 
 //Variable para guardar el ganador
@@ -60,6 +76,7 @@ function ganador() {
             return true;
         }
     }
+
     return false;
 }
 
@@ -81,13 +98,19 @@ const btn2 = document.getElementById("boton")
 //Funcion para que el juegp se reinicie al tocar el boton "otra vez"
 function borrarGato() {
     btn2.addEventListener("click", () => {
-        arregloCeldas.forEach(celda=>celda.innerHTML="")
+        arregloCeldas.forEach(celda => celda.innerHTML = "")
     })
 }
 borrarGato()
 
 
+const jugadores = document.getElementById("2jugadores")
+let variable = false;
+jugadores.addEventListener("click", () => {
+    variable = true
 
+})
+function player2() {
+    jugadorActual = jugadorActual === "✖️" ? "⭕" : "✖️"
 
-
-
+}
