@@ -1,4 +1,4 @@
-
+/*Estilos para la pagina completa*/
 body{
     background: url(/img/fondos.jpg) no-repeat;
     background-size: cover;
@@ -6,7 +6,7 @@ body{
 }
 
 
-
+/*Estilos para el contenedor donde se va a jugar */
 .container{
     position: absolute;
     top: 190px;
@@ -16,7 +16,7 @@ body{
 }
 
 
-
+/*Estilos para el texto que se esconde detras del boton reglas*/
 .hidden{
     display: none;
     position: absolute;
@@ -24,6 +24,7 @@ body{
     top: 70px;
 }
 
+/*Estilos del boton de las reglas*/
 .btn{
     position: absolute;
     top: 60px;
@@ -36,6 +37,7 @@ body{
     color: aliceblue;
 } 
 
+/*Estilos para las palabras "turno", en el cuadro del turno*/
 .turn{
     position: absolute;
     top: 20px;
@@ -43,12 +45,14 @@ body{
     font-size: 40px;
 }
 
+/*Estilos para mostrare el turno del siguiente jugador*/
 .turno{
     position: absolute;
     top: 40px;
     left: 660px;
 }
 
+/*Estilos para la dimencion del icono*/
 .icon{
     width:20px ;
 }
@@ -62,7 +66,7 @@ body{
 }
 
 
-
+/*Estilos para el texto de las reglas del juego*/
 .tex{
     font-family: 'Times New Roman', Times, serif;
     color: aliceblue;
@@ -73,7 +77,7 @@ body{
 }
 
 
-
+/*Estilos para el contenedor del lado izquierdo*/
 .con1{
     background-color: rgba(0, 0, 255, 0.149) ;
     position: absolute;
@@ -87,7 +91,7 @@ body{
 }
 
 
-
+/*Estilos para el contenedor del lado derecho*/
 .con2{
     background-color: rgba(0, 0, 255, 0.149) ;
     position: absolute;
@@ -101,7 +105,7 @@ body{
 }
 
 
-
+/*Estilos para las cuadriculas del juego*/
 .gato{
     height:130px;
     width: 130px;
@@ -109,21 +113,15 @@ body{
     border: 2px solid rgb(10, 10, 70)
 } 
 
-
-
 .gato1{
     display: flex;
     justify-content: center;
 }
 
-
-
 .gato2{
     display: flex;
     justify-content: center;
 }
-
-
 
 .gato3{
     display: flex;
@@ -131,6 +129,8 @@ body{
 }
 
 
+
+/*Estilos del boton para volver a empezar el juego*/
 .btnRestaurar{
     position: absolute;
     top: 70%;
@@ -142,6 +142,7 @@ body{
     font-family: cursive;
 }
 
+/*Estilos para el boton de los 2 jugadores*/
 .jugadores2{
     position: absolute;
     top: 70%;
@@ -154,13 +155,3 @@ body{
 
 }
 
-.maquinaYJugador{
-    position: absolute;
-    top: 60%;
-    left: 156%;
-    width: 41%;
-    border-radius: 30px;
-    background:rgba(3, 3, 33, 0.955);
-    color: aliceblue;
-    font-family: cursive;
-}
