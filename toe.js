@@ -1,43 +1,52 @@
-//Variables que contienen cada uno de los cuadros
-let cell = document.querySelector(".gato")
+let cell = document.querySelector(".gato") //Variables que contienen cada uno de los cuadros
 
-//Array de todos los cuadros
-let arregloCeldas = [cas_0, cas_1, cas_2, cas_3, cas_4, cas_5, cas_6, cas_7, cas_8]
+let arregloCeldas = [cas_0, cas_1, cas_2, cas_3, cas_4, cas_5, cas_6, cas_7, cas_8]//Array de todos los cuadros
 
-let jugadorActual = "✖️"
+let jugadorActual = "✖️"//Variable para determinar el turno
 
-//Variable para terminar el turno del jugador
-let juga = document.getElementById("turnoJugador")
+let juga = document.getElementById("turnoJugador")//Variable para terminar el turno del jugador
 
-//Funcion para que el jugador(humano), pueda jugar
+let ganadorF;//Variable para guardar el ganador
+
+let variable = false;//Variable de falso, para poder jugar, humano1 vs humano2
+
+const btn = document.getElementById("reglas")//Boton de las reglas
+
+const p = document.getElementById("p")//Variable para mostrar el texto de html
+
+const btn2 = document.getElementById("boton")//Variable para llamar el boton del html
+
+const jugadores = document.getElementById("2jugadores") //Variable para los 2 jugadores. 
+
+//Funcion para el jugador1 vs la maquina
 function jugador1() {
+
     arregloCeldas.forEach(casilla => casilla.addEventListener("click", function () {
         casilla.innerHTML = "✖️", "⭕"
-        juga.innerHTML = "✖️"
-        if (!ganador() && !empate()) {
+
+        if (!variable) {
+            casilla.innerHTML = "✖️"
+            juga.innerHTML = "✖️"
+            maquina()
+        } else if (!ganador() && !empate() && !variable) {
             maquina()
         }
         if (variable) {
             jugadorActual = jugadorActual === "✖️" ? "⭕" : "✖️"
             casilla.innerHTML = jugadorActual
         }
-
         if (ganador()) {
             alert("El ganador es: " + ganadorF);
-        }else if (empate()) {}
-
+        } else if (empate()) { }
 
     }))
 }
 jugador1()
 
-function mensaje() {
-    document.getElementById("mensaje1").innerHTML = "empate"
-}
-
+//Funcion para definir un empate
 function empate() {
-    let empateVacios = arregloCeldas.filter(vacias=>vacias.innerHTML=="")
-    if(empateVacios.length==0){
+    let empateVacios = arregloCeldas.filter(vacias => vacias.innerHTML == "")
+    if (empateVacios.length == 0) {
         alert("Empate")
         return true
     }
@@ -58,9 +67,6 @@ function maquina() {
 
 }
 
-//Variable para guardar el ganador
-let ganadorF;
-
 //Funcion para determinar y mostrar quien es el ganador
 function ganador() {
     const combinacionesGanadoras = [
@@ -68,6 +74,7 @@ function ganador() {
         [0, 3, 6], [1, 4, 7], [2, 5, 8],
         [0, 4, 8], [2, 4, 6]
     ]
+
     //Bucle que recorre todas las combinaciones ganadoras posibles
     for (let combis of combinacionesGanadoras) {
         let [espacio1, espacio2, espacio3] = combis
@@ -80,20 +87,10 @@ function ganador() {
     return false;
 }
 
-
-//Boton de las reglas
-const btn = document.getElementById("reglas")
-
-//Variable para mostrar el texto de html
-const p = document.getElementById("p")
-
 //funcion para que las reglas se muestren al dar click en el boton
 btn.addEventListener("click", () => {
     p.classList.add("texto")
 })
-
-//Variable para llamar el boton del html
-const btn2 = document.getElementById("boton")
 
 //Funcion para que el juegp se reinicie al tocar el boton "otra vez"
 function borrarGato() {
@@ -103,13 +100,15 @@ function borrarGato() {
 }
 borrarGato()
 
+variable = false
 
-const jugadores = document.getElementById("2jugadores")
-let variable = false;
+//boton para jugar entre 2 humanos
 jugadores.addEventListener("click", () => {
     variable = true
 
 })
+
+//Funcion para el jugador 1, cuando esten jugando 2 humanos. 
 function player2() {
     jugadorActual = jugadorActual === "✖️" ? "⭕" : "✖️"
 
